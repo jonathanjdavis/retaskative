@@ -21,7 +21,7 @@ class Task extends Model
         'name',
         'description',
         'notify',
-        'reset_to_completed',
+        'due_from_completed',
         'interval',
         'interval_units',
     ];
@@ -32,5 +32,13 @@ class Task extends Model
     public function retaskative()
     {
         return $this->belongsTo(Retaskative::class);
+    }
+
+    /**
+     * Get the task records.
+     */
+    public function taskrecords()
+    {
+        return $this->hasMany(TaskRecord::class);
     }
 }
