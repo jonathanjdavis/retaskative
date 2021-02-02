@@ -19,6 +19,7 @@ class CreateTasksTable extends Migration
             $table->string('name', 48);
             $table->string('description', 144);
             $table->boolean('notify');
+            $table->boolean('due_from_completed');
             $table->tinyInteger('interval');
             $table->char('interval_units', 2);
             $table->timestamps();

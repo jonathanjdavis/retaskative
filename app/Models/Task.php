@@ -21,6 +21,7 @@ class Task extends Model
         'name',
         'description',
         'notify',
+        'reset_to_completed',
         'interval',
         'interval_units',
     ];
