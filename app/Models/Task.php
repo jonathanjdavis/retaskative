@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Retaskative extends Model
+class Task extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -16,24 +16,20 @@ class Retaskative extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',
+        'retaskative_id',
         'notify',
+        'name',
+        'description',
+        'notify',
+        'interval',
+        'interval_units',
     ];
 
     /**
-     * Get the user.
+     * Get the retaskative the task belongs to.
      */
-    public function user()
+    public function retaskative()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Retaskative::class);
     }
-
-    /**
-     * Get the tasks.
-     */
-    public function tasks()
-    {
-        return $this->hasMany(Task::class);
-    }
-
 }
